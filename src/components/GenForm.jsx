@@ -17,7 +17,7 @@ function GenForm({ secondData, setSecondData, onDel, setObj, formData }) {
         <label>Degree:</label>
         <input onChange={handleChange} name="degree" type="text" required />
         <p>
-          {secondData.degree.length >= 4 ? "Must be at least 4 characters" : ""}
+          {secondData.degree.length <= 4 ? "Must be at least 4 characters" : ""}
         </p>
       </div>
       <div className="form-group">

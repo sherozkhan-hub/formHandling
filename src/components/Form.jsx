@@ -40,8 +40,12 @@ function Form() {
   const isValid = () => {
     return (
       formData.firstname.trim() !== "" &&
+      formData.firstname.length < 4 &&
       formData.lastname.trim() !== "" &&
+      formData.lastname.length < 4 &&
       formData.age !== "" &&
+      formData.age < 15 &&
+      secondData.degree.length <= 4 &&
       formData.address.trim() !== ""
     );
   };
@@ -53,7 +57,7 @@ function Form() {
       alert("Form submitted successfully");
     } else {
       console.log("Form data is incomplete");
-      alert("Form is incomplete");
+      alert("Form is incomplete or invalid");
     }
   };
 
