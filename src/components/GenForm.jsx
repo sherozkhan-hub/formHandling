@@ -10,47 +10,23 @@ function GenForm({ secondData, setSecondData, onDel, setObj, formData }) {
     // console.log(secondData);
   };
 
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
-      e.preventDefault(); // Prevent form submission on Enter key
-    }
-  };
-
   return (
     <div className="form-container">
       <h2>Education Information</h2>
       <div className="form-group">
         <label>Degree:</label>
-        <input
-          onChange={handleChange}
-          onKeyDown={handleKeyDown}
-          name="degree"
-          type="text"
-          required
-        />
+        <input onChange={handleChange} name="degree" type="text" required />
         <p>
           {secondData.degree.length <= 4 ? "Must be at least 4 characters" : ""}
         </p>
       </div>
       <div className="form-group">
         <label>University:</label>
-        <input
-          onChange={handleChange}
-          onKeyDown={handleKeyDown}
-          name="university"
-          type="text"
-          required
-        />
+        <input onChange={handleChange} name="university" type="text" required />
       </div>
       <div className="form-group">
         <label>Location:</label>
-        <input
-          onChange={handleChange}
-          onKeyDown={handleKeyDown}
-          name="location"
-          type="text"
-          required
-        />
+        <input onChange={handleChange} name="location" type="text" required />
         <p>
           {secondData.location.length > 10
             ? "Address should contain more detail "
