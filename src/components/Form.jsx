@@ -32,7 +32,8 @@ function Form() {
     setForms(array);
   };
 
-  const handleForm = () => {
+  const handleForm = (e) => {
+    e.preventDefault();
     setForms([...forms, { degree: "", university: "", location: "" }]);
     console.log(forms);
   };
@@ -120,7 +121,9 @@ function Form() {
         </div>
         <div>
           <div className="form-group">
-            <button onClick={handleForm}>Add Education</button>
+            <button type="button" onClick={handleForm}>
+              Add Education
+            </button>
           </div>
           {forms.map((item, index) => {
             if (index === 0) return null;
