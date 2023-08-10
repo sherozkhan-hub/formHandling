@@ -32,8 +32,7 @@ function Form() {
     setForms(array);
   };
 
-  const handleForm = (e) => {
-    e.preventDefault();
+  const handleForm = () => {
     setForms([...forms, { degree: "", university: "", location: "" }]);
     console.log(forms);
   };
