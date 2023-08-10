@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-function GenForm({ secondData, setSecondData, setObj, formData }) {
+function GenForm({ secondData, setSecondData, onDel, setObj, formData }) {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setSecondData((prevData) => ({
@@ -17,9 +17,7 @@ function GenForm({ secondData, setSecondData, setObj, formData }) {
         <label>Degree:</label>
         <input onChange={handleChange} name="degree" type="text" required />
         <p>
-          {secondData.degree && secondData.degree.length >= 4
-            ? "Must be at least 4 characters"
-            : ""}
+          {secondData.degree.length >= 4 ? "Must be at least 4 characters" : ""}
         </p>
       </div>
       <div className="form-group">
@@ -30,11 +28,12 @@ function GenForm({ secondData, setSecondData, setObj, formData }) {
         <label>Location:</label>
         <input onChange={handleChange} name="location" type="text" required />
         <p>
-          {secondData.location && secondData.degree.location > 7
+          {secondData.location.length > 10
             ? "Address should contain more detail "
             : ""}
         </p>
       </div>
+      <button onClick={onDel}>Delete</button>
     </div>
   );
 }

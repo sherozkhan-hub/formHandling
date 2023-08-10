@@ -34,9 +34,8 @@ function Form() {
 
   const handleForm = () => {
     setForms([...forms, { degree: "", university: "", location: "" }]);
+    console.log(forms);
   };
-
-  // console.log(forms);
 
   const isValid = () => {
     return (
@@ -101,11 +100,7 @@ function Form() {
             name="age"
             required
           />
-          <p>
-            {formData.age && formData.age > 15
-              ? "Age should be greater than 15"
-              : ""}
-          </p>
+          <p>{formData.age < 15 ? "Age should be greater than 15" : ""}</p>
         </div>
         <div className="form-group">
           <label htmlFor="address">Address:</label>
@@ -131,7 +126,7 @@ function Form() {
                 setSecondData={setSecondData}
                 setObj={setObj}
                 formData={formData}
-                onClick={() => handleDelete(index)}
+                onDel={() => handleDelete(index)}
               />
             );
           })}
