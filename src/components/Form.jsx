@@ -38,16 +38,18 @@ function Form() {
   };
 
   const isValid = () => {
-    return (
+    if (
       formData.firstname.trim() !== "" &&
-      formData.firstname.length < 4 &&
+      formData.firstname.length > 4 &&
       formData.lastname.trim() !== "" &&
-      formData.lastname.length < 4 &&
-      formData.age !== "" &&
-      formData.age < 15 &&
-      secondData.degree.length <= 4 &&
+      formData.lastname.length > 4 &&
+      formData.age >= 15 &&
+      (secondData.degree.length >= 4 || secondData.degree.length == "") &&
       formData.address.trim() !== ""
-    );
+    ) {
+      return true;
+    }
+    return false;
   };
 
   const handleSubmit = (e) => {
